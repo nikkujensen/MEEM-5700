@@ -7,16 +7,16 @@ T = time(2) - time(1);          % (sec)     sampling period
 fs = 1/T;                       % (Hz)      sampling frequency
 N = length(sig);                % (null)    block size
 fNyq = fs/2;                    % (Hz)      nyquist frequency
-f = fs*(0:N/2)/N;               % (Hz)      frequency vector
+f = linspace(0,fNyq,N/2+1);     % (Hz)      frequency vector. one added to include zero
 
 %% calculate the transform
-Y = fft(sig);
-Y2 = abs(Y/N);                  % two-sided spectrum
+Y = fft(sig);                   % matlab fft command
+Y2 = abs(Y/N);                  % two-sided spectrum. normalize for further calcs???
 Y1 = Y2(1:N/2+1);               % single sided spectrum
 Y1(2:end-1) = 2*Y1(2:end-1);    % correction to include full signal strength from the other side???          
 
 %% plot it!
-figure
+% figure
 semilogx(f,mag2db(abs(Y1)),"linewidth",2)
 xlabel("Frequency (Hz)")
 ylabel("Mag dB")
