@@ -58,7 +58,7 @@ for i = 1:numel(fNamesStr)
             
             % get/assign data
             dat(i).name = fNamesStr(i);
-            dat(i).time = temp(:,1);
+            dat(i).time = temp(:,1)./1e9;           % convert nano-secs to seconds
             dat(i).values = temp(:,2:end);
             
             
