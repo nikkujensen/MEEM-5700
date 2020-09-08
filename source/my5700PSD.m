@@ -1,4 +1,4 @@
-function  my5700PSD(time,sig)
+function  lne = my5700PSD(time,sig)
 %MY5700FFT Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -18,7 +18,10 @@ Y1(2:end-1) = 2*Y1(2:end-1);    % correction to include full signal strength fro
 
 %% plot it!
 % figure
-semilogx(f,mag2db(abs(Y1)),"linewidth",2)
+% semilogx(f,mag2db(abs(Y1)),"linewidth",2)
+lne = line(f,mag2db(abs(Y1)./fs));
+h = gca;
+h.XScale = "log";
 xlabel("Frequency (Hz)")
 ylabel("Mag dB")
 title("Power Spectral Density (PSD)")
