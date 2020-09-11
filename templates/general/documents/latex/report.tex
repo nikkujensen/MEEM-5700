@@ -1,0 +1,82 @@
+%-------------------------------DOCUMENT INITIALIZATION---------------------%
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%-----------------------------------LOAD PACKAGES---------------------------%
+\usepackage[utf8]{inputenc}     % This is the encoding for the document, to allow characters beyond ASCII (e.g. à, ü, č ...) to be used in the text
+\usepackage{geometry}           % geometry of the
+\usepackage{comment}            % allows for document comments
+\usepackage{graphicx}	        % for inserting graphics
+\usepackage{subcaption}         % allow for subcaptions
+\usepackage{pdfpages}           % allow to combine PDFs
+\usepackage{amsmath}            % matrix environments
+\usepackage{hyperref}           % allows hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}                               % setup the hyperref package
+\graphicspath{{figures/}} % sets the path to obtain figures
+\usepackage{placeins}           % used to allow for the float barrier command which prevents floats (figures) from passing a certain point.
+\usepackage{indentfirst}        % allow for first paragraph to be indented
+\usepackage{appendix}           % allow for use of appendices (https://texfaq.org/FAQ-appendix)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%-------------------------------DOCUMENT FORMATTING-------------------------%
+\geometry{letterpaper, margin = 1in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%-----------------------------DOCUMENT IDENTIFICATION-----------------------%
+\title{Title of Report}
+\author{Nick J. Jensen}
+\date{Date}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%---------------------------------TOP MATTERS-------------------------------%
+% start the document
+\begin{document}
+
+% make the title
+\maketitle
+
+% make the TOC
+\tableofcontents
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%------------------------------------BODY-----------------------------------%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%----------------------------------REFERENCES-------------------------------%
+% add code for references here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%----------------------------------APPENDICES-------------------------------%
+\clearpage
+\appendix
+\appendixpage
+\addappheadtotoc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%---------------------------------END MATTERS-------------------------------%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
