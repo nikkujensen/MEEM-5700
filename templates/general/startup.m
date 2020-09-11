@@ -4,6 +4,7 @@ projectRootDir = fileparts(mfilename('fullpath'));
 % Add project directories to path
 addpath(fullfile(projectRootDir,genpath('data')),'-end');
 addpath(fullfile(projectRootDir,genpath('documents')),'-end');
+addpath(fullfile(projectRootDir,'figures'),'-end');
 % addpath(fullfile(projectRootDir,'libraries'),'-end');
 % addpath(fullfile(projectRootDir,'models'),'-end');
 % addpath(fullfile(projectRootDir,'work'),'-end');
