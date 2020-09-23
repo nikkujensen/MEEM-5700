@@ -1,4 +1,4 @@
-function  [lne, Y1S] = my5700FFT(time,sig)
+function  lne = my5700FFT(time,sig)
 %MY5700FFT Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -12,9 +12,11 @@ fNyq = fs/2;                    % (Hz)      nyquist frequency
 if ~rem(N,2)
     % even
     len = N/2+1;
+    
 else
     % odd
     len = N/2+0.5;
+    
 end
 
 %% calculate the transform
@@ -23,10 +25,7 @@ Y1  = Y2(1:len);                % get the single sided
 Y1S = 2/N.*Y1;                  % scale the single sided to have full spectrum power and a set period (using N blocks)
 Y1A = abs(Y1S);                 % get the autopower
 %% plot it!
-f = linspace(0,fNyq,len);       % (Hz)  frequency vector
-lne = line(f,mag2db(Y1A));      %       plot the line in db scale
-
-% format the plot
+lne = line(f,mag2db(Y1A));
 h = gca;
 h.XScale = "log";
 xlabel("Frequency (Hz)")
