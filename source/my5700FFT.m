@@ -1,4 +1,4 @@
-function  [f, Y1S] = my5700FFT(time,sig)
+function  [Y1S, f] = my5700FFT(time,sig)
 %MY5700FFT Summary of this function goes here
 %   Detailed explanation goes here
 

@@ -1,9 +1,9 @@
-function  [f, Y1PSD] = my5700PSD(time,sig)
+function  [Y1PSD, f] = my5700PSD(time,sig)
 %MY5700PSD Summary of this function goes here
 %   Detailed explanation goes here
 
 %% utilize the custom FFT function
-[f, Y1S] = my5700FFT(time,sig);
+[Y1S, f] = my5700FFT(time,sig);
 
 %% perform PSD calcs
 delta_f = f(2)-f(1);            % (Hz)      frequency resolution
