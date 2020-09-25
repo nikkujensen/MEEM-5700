@@ -18,8 +18,11 @@ else
     len = N/2+0.5;
 end
 
+% apply the window before the freq domain
+sigW = win.*sig;
+
 %% calculate the transform
-Y2  = fft(sig);                 % matlab fft command - double sided
+Y2  = fft(sigW);                % matlab fft command - double sided
 Y1  = Y2(1:len);                % get the single sided
 Y1S = ACF*2/N.*Y1;              % scale the single sided to have full spectrum power and a set period (using N blocks)
 Y1A = abs(Y1S);                 % get the autopower
