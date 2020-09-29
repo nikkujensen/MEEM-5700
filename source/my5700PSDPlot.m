@@ -5,7 +5,7 @@ function lne = my5700PSDPlot(time,sig)
 [Y1PSD, f] = my5700PSD(time,sig);
 
 %% plot it!
-lne = line(f,mag2db(Y1PSD));    %       plot the line in db scale
+lne = line(f,mag2db(abs(Y1PSD)));    %       plot the line in db scale
 
 % format the plot
 h = gca;

@@ -10,8 +10,8 @@ ECF = 1/rms(win);               %           energy correction factor
 
 %% perform PSD calcs
 delta_f = f(2)-f(1);            % (Hz)      frequency resolution
-Y1A = ECF*abs(Y1S);             %           get the autopower
-Y1PSD = Y1A./delta_f;           %           power spectral density
+Y1S = ECF.*Y1S;             	%           get the autopower
+Y1PSD = Y1S./delta_f;           %           power spectral density
 
 end
 

@@ -25,7 +25,6 @@ sigW = win.*sig;
 Y2  = fft(sigW);                % matlab fft command - double sided
 Y1  = Y2(1:len);                % get the single sided
 Y1S = ACF*2/N.*Y1;              % scale the single sided to have full spectrum power and a set period (using N blocks)
-Y1A = abs(Y1S);                 % get the autopower
 f = linspace(0,fNyq,len);       % (Hz)  frequency vector
 
 end
