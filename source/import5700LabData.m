@@ -3,7 +3,7 @@ function import5700LabData(fName)
 %     just import the filename without any extensions
 
 % set the file name and data structure for this filename
-dat = struct("name",[],"time",[],"values",[]);  % create the structure
+dat = struct("name",[],"x",[],"values",[]);  % create the structure
 
 % now get a data file(s) for a given name
 searchStr = strcat("data/lab/",fName,"*");  % set the search string
@@ -32,7 +32,7 @@ for i = 1:numel(fNamesStr)
             %     - still not sure about reset relative or not, but for now we will assume the relative time is reset
             nums = readmatrix(fNamesStr(i));            % get the numeric data
             dat(i).name = fNamesStr(i);                 % assign the file name
-            dat(i).time = nums(:,1);                    % get and assign the time data
+            dat(i).x = nums(:,1);                    % get and assign the time data
             dat(i).values = nums(:,2:end);              % get and assign the channel data
             
         case ".csv"
@@ -58,7 +58,7 @@ for i = 1:numel(fNamesStr)
             
             % get/assign data
             dat(i).name = fNamesStr(i);
-            dat(i).time = temp(:,1)./1e9;           % convert nano-secs to seconds
+            dat(i).x = temp(:,1)./1e9;           % convert nano-secs to seconds
             dat(i).values = temp(:,2:end);
             
             
