@@ -1,1 +1,0 @@
-This placeholder just allows the mostly blank folder to be transferred with Git
