@@ -1,4 +1,4 @@
-function [FRF, COH] = my5700FRF(in,out,typ)
+function [FRF, PHS, COH] = my5700FRF(in,out,typ)
 % this performs an FRF on a input/output single-sided linear spectrum with
 % a given estimate type. The options are H1 and H2.
 
@@ -18,6 +18,9 @@ end
 
 % compute the FRF
 FRF = G_num./G_den;
+
+% compute the Phase
+PHS = phase(FRF);
 
 % compute the coherence
 COH = Coherence(in,out);
