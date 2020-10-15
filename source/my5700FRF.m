@@ -7,20 +7,22 @@ switch typ
     case 'H1'
         % compute the crosspowers
         % Gfx(w)/Gxx(w) = H1(w)
-        G_num = my5700CrossPower(out,in);
+        G_num = my5700CrossPower(in,out);
         G_den = my5700CrossPower(out,out);
     case 'H2'
         % compute the crosspowers
         % Gxx(w)/Gxf(w) = H2(w)
-        G_num = my5700CrossPower(in,in);
-        G_den = my5700CrossPower(in,out);        
+        G_num = my5700CrossPower(out,out);
+        G_den = my5700CrossPower(out,in);        
 end
 
 % compute the FRF
 FRF = G_num./G_den;
 
 % compute the Phase
-PHS = phase(FRF);
+% PHS = phase(FRF);
+PHS = 180/pi*angle(FRF);
+
 
 % compute the coherence
 COH = Coherence(in,out);
