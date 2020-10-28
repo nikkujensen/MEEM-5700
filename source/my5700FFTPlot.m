@@ -1,8 +1,8 @@
-function lne = my5700FFTPlot(time,sig,win)
+function lne = my5700FFTPlot(time,sig,win,WCF)
 %MY5700FFTPLOT Summary
 
 %% utilize the custom FFT function
-[Y1S, f] = my5700FFT(time,sig,win);
+[Y1S, f] = my5700FFT(time,sig,win,WCF);
 
 %% plot it!
 lne = line(f,mag2db(abs(Y1S)));     %       plot the line in db scale
