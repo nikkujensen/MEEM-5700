@@ -1,7 +1,7 @@
 function  [Y1S, f] = my5700FFT(time,sig,win,WCF)
 %MY5700FFT Summary of this function goes here
-%   Note: the blocks of matrix data are in the rows and the data is in the
-%   columns
+%   Note: the blocks of matrices of data are in the rows and the data is in the
+%   columns. This goes for the time, signal, and window.
 
 %% calculate some parameters based on the inputs
 T = time(2,1) - time(1,1);      % (sec)     sampling period
