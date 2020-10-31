@@ -37,11 +37,12 @@ Y1  = Y2(1:len,:);              % get the single sided
 % based on the signal length, determine how to scale (don't double multiply for 0 or fNyq if it is not present on the negative frequency side)
 if flg
 	Y1S = Y1;                                   % get all the data at first
-	Y1S(2:end,:) = WCF*2/N.*Y1S(2:end,:);       % scale the single sided to have full spectrum power and a set period (using N blocks)
+	Y1S(2:end,:) = 2*Y1S(2:end,:);              % scale the single sided to have full spectrum power and a set period (using N blocks)
 else
 	Y1S = Y1;                                   % get all the data at first
-	Y1S(2:end-1,:) = WCF*2/N.*Y1S(2:end-1,:);   % scale the single sided to have full spectrum power and a set period (using N blocks)
+	Y1S(2:end-1,:) = 2*Y1S(2:end-1,:);          % scale the single sided to have full spectrum power and a set period (using N blocks)
 end
+Y1S = WCF/N.*Y1S;                               % include DC (0 Hz) in remainder of scaling
 
 f = linspace(0,fNyq,len);       % (Hz)  frequency vector
 
