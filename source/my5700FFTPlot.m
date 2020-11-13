@@ -5,7 +5,7 @@ function lne = my5700FFTPlot(time,sig,win,WCF)
 [Y1S, f] = my5700FFT(time,sig,win,WCF);
 
 %% plot it!
-lne = line(f,mag2db(abs(Y1S)));     %       plot the line in db scale
+lne = plot(f,mag2db(abs(Y1S)));     %       plot the line in db scale
 
 % format the plot
 h = gca;
