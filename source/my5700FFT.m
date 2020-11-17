@@ -1,4 +1,4 @@
-function  [Y1S, f] = my5700FFT(time,sig,win,WCF)
+function  [Y1S, f, Y2] = my5700FFT(time,sig,win,WCF)
 %MY5700FFT Summary of this function goes here
 %   Note: the blocks of matrices of data are in the rows and the data is in the
 %   columns. This goes for the time, signal, and window.
